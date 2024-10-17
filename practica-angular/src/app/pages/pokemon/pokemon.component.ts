@@ -3,11 +3,12 @@ import { CardComponent } from './card/card.component';
 import { PokemonService } from './services/pokemon.service';
 import { Pokemons } from './interfaces/pokemons';
 import { PaginacionComponent } from './paginacion/paginacion.component';
+import { SearchComponent } from './search/search.component';
 
 @Component({
   selector: 'app-pokemon',
   standalone: true,
-  imports: [CardComponent, PaginacionComponent],
+  imports: [CardComponent, PaginacionComponent, SearchComponent],
   templateUrl: './pokemon.component.html',
   styleUrl: './pokemon.component.css'
 })
@@ -36,5 +37,28 @@ export class PokemonComponent implements OnInit {
   setNewPokemon(pokemonsnews: Pokemons) {
     this.pokemons = pokemonsnews;
   }
+
+  searchPokemon(termino: string):void {
+    if(termino){
+      this._srvPokemon.getpokemon(termino).subscribe((pokemon) => {
+        this.pokemons = {
+          count: 1,
+          next: '',
+          previous: null,
+          results: [
+            {
+              name: pokemon.name,
+              url: '',
+              data: pokemon
+            }]
+        }
+        this._srvPokemon.nextURL = null;
+        this._srvPokemon.previousURL = null;
+      })
+    }else{
+      this.ngOnInit();
+    }
+  }
+
 
 }
