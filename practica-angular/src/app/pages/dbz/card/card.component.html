@@ -100,7 +100,7 @@
           <p class="card-text"><strong>Ki: </strong>{{dbzcat.ki}}</p>
           <p class="card-text"><strong>Ki máximo: </strong>{{dbzcat.maxKi}}</p>
           <!-- revisar como agregar mas informacion -->
-          <a href="#" class="btn btn-primary">Más Infomación</a>
+          <li class="btn btn-primary" (click)="openModal(dbzcat)">Más Infomación</li>
         </div>
       </div>
     </div>
@@ -111,3 +111,6 @@
         </div>
     </ng-template>
 </div>
+
+
+<dbz-modal />

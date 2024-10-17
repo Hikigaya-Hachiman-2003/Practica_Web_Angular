@@ -1,1 +1,21 @@
-<p>search works!</p>
+<div class="input-group mb-3">
+    <input 
+        #txtSearch
+        type="text" 
+        class="form-control" 
+        placeholder="Escriba el Nombre, ID o Raza del personaje" 
+        aria-label="Escriba el Nombre, ID o Raza del personaje" 
+        (keydown.enter)="searchCaracther(txtSearch.value)"
+        aria-describedby="button-addon2"
+        
+    >
+    <button 
+        class="btn btn-outline-secondary" 
+        type="button" 
+        (click)="searchCaracther(txtSearch.value)"
+        id="button-addon2"
+        
+    >
+        <i class="bi bi-search"></i>
+    </button>
+</div>

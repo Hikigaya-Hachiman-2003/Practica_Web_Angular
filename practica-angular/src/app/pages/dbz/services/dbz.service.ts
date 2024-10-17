@@ -24,7 +24,7 @@ export class DbzService {
   }
 
   getDBZC(termino: string | number): Observable <Item>{
-    return this.http.get<Item>(`${this.apiURLBase}${termino}`);
+    return this.http.get<Item>(`${this.apiURLBase}/${termino}`);
   }
 
   set nextURL(url: string | null){

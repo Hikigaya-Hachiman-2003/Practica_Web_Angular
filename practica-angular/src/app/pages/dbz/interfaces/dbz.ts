@@ -5,18 +5,18 @@ export interface DragonBallZ {
 }
 
 export interface Item {
-    items: any;
-    links: any;
     id:          number;
     name:        string;
-    ki:          string;
-    maxKi:       string;
-    race:        string;
-    gender:      Gender;
-    description: string;
+    ki?:          string;
+    maxKi?:       string;
+    race?:        string;
+    gender?:      Gender;
+    description?: string;
     image:       string;
-    affiliation: Affiliation;
-    deletedAt:   null;
+    affiliation?: Affiliation;
+    deletedAt?:   null;
+    originPlanet?:    OriginPlanet;
+    transformations?: Transformation[];
 }
 
 export enum Affiliation {
@@ -29,9 +29,6 @@ export enum Gender {
     Female = "Female",
     Male = "Male",
 }
-
-
-
 
 export interface Links {
     first:    string;
@@ -46,4 +43,21 @@ export interface Meta {
     itemsPerPage: number;
     totalPages:   number;
     currentPage:  number;
+}
+
+export interface OriginPlanet {
+    id:          number;
+    name:        string;
+    isDestroyed: boolean;
+    description: string;
+    image:       string;
+    deletedAt:   null;
+}
+
+export interface Transformation {
+    id:        number;
+    name:      string;
+    image:     string;
+    ki:        string;
+    deletedAt: null;
 }

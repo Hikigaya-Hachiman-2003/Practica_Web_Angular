@@ -1,1 +1,53 @@
-<p>modal works!</p>
+
+
+    <div class="modal fade" #modalElement aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
+        tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Detalles</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- llenar de datos de personaje-->
+                    <p><strong>Nombre:</strong> {{ dbz.name }}</p>
+                    <p><strong>Raza:</strong> {{ dbz.race }}</p>
+                    <p><strong>Planeta de origen:</strong> {{ dbz.originPlanet?.image }}</p>
+                    <p><strong>Descripción:</strong> {{ dbz.description }}</p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">
+                            Transformaciones</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="modal fade" #modalElementtwo aria-hidden="true" aria-labelledby="exampleModalToggleLabel2"
+        tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">Transformaciones</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    llenar de datos de personaje
+                    <ul *ngFor="let transformation of dbz.transformations">
+                        <li><strong>Transformación:</strong> {{ transformation.name }}</li>
+                        <li><strong>Ki:</strong> {{ transformation.ki }}</li>
+                        <img [src]="transformation.image" alt="Imagen de la transformación">
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">
+                        Detalles
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Cerrar</button> -->
+

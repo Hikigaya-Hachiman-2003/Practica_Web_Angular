@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
-  selector: 'app-search',
+  selector: 'dbz-search',
   standalone: true,
   imports: [],
   templateUrl: './search.component.html',
@@ -9,4 +9,14 @@ import { Component } from '@angular/core';
 })
 export class SearchComponent {
 
+  @Output() public eventSearch = new EventEmitter<string>();
+
+  searchCaracther(termino: string | number):void{
+    const termSearch = termino.toString().trim()
+    if(termino.toString().length === 0){
+      return;
+    }
+    console.log('Searching for:', termSearch);
+    this.eventSearch.emit(termSearch);
+  }
 }
