@@ -5,6 +5,8 @@ export interface DragonBallZ {
 }
 
 export interface Item {
+    items: any;
+    links: any;
     id:          number;
     name:        string;
     ki:          string;
@@ -27,6 +29,9 @@ export enum Gender {
     Female = "Female",
     Male = "Male",
 }
+
+
+
 
 export interface Links {
     first:    string;

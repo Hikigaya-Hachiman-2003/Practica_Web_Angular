@@ -13,9 +13,11 @@ export class CardComponent implements OnChanges{
 
   @Input() public dbzcaracther : DragonBallZ | undefined
 
+  imageLoaded: boolean = false;
+
   ngOnChanges(changes: SimpleChanges): void {
     if(changes['dbzcaracther']){
-      
+      this.imageLoaded = false;
     }
   }
 }

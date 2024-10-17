@@ -1,1 +1,35 @@
-<p>paginacion works!</p>
+<div class="row mt-2 mb-2">
+    <div class="col-12">
+        <nav aria-label="...">
+            <ul class="pagination">
+                <li class="page-item"
+                [ngClass]="{'disabled':!firstURL}"
+                >
+                    <a class="page-link" 
+                    (click)="loadPagDBZS(firstURL!)">Primera</a>
+                </li>
+                <li class="page-item "
+                [ngClass]="{'disabled': !previousURL}"
+                >
+                    <a class="page-link"
+                    (click)="loadPagDBZS(previousURL!)"
+                    >Anterior</a>
+                </li>
+                <li class="page-item"
+                [ngClass]="{'disabled':!nextURL}"
+                >
+                    <a class="page-link"
+                    (click)="loadPagDBZS(nextURL!)"
+                    >Siguiente</a>
+                </li>
+                <li class="page-item"
+                [ngClass]="{'disabled':!lastURL}"
+                >
+                    <a class="page-link"
+                    (click)="loadPagDBZS(lastURL!)"
+                    >Última</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>
