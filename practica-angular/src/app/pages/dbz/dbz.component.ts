@@ -39,6 +39,7 @@ export class DbzComponent implements OnInit {
       this._srvDbz.getDBZC(termino).subscribe((dbz) => {
         const originPlanetImage = dbz.originPlanet?.image || ''; // Valor predeterminado vacío si es undefined
         const originPlanetName = dbz.originPlanet?.name || 'Desconocido'; // Valor predeterminado si es undefined
+        
 
         this.dbzs = {
           items: [

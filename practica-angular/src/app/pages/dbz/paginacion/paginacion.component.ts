@@ -36,7 +36,7 @@ export class PaginacionComponent {
 
   loadPagDBZS(url: string){
     this._srvDbz.getDBZCS(url).subscribe( dbzAll => {
-      dbzAll.items.forEach( item => {
+      dbzAll.items?.forEach( item => {
         return item
       })
       this._srvDbz.nextURL = dbzAll.links.next

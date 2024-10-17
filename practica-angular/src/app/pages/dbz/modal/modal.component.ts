@@ -18,13 +18,9 @@ export class ModalComponent {
     ki: '',
     maxKi: '',
     race: '',
-    gender: {
-      
-    },
+    gender: undefined,
     description: '',
-    affiliation: {
-
-    },
+    affiliation: undefined,
     originPlanet:{
       name: '',
       isDestroyed: false,
@@ -46,6 +42,7 @@ export class ModalComponent {
   private bootstrapModal: any;
 
   @ViewChild('modalElement') public modalElement!: ElementRef
+
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {
     

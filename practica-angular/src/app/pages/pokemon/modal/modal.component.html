@@ -20,7 +20,7 @@
             <h6>Habilidades:</h6>
             <ul class="list-unstyled">
               <li *ngFor="let ability of pokemon.abilities">
-                {{ability.ability.name | titlecase}}
+                {{ability.ability.name| titlecase}}
                 <small *ngIf="ability.is_hidden">(Oculta)</small>
               </li>
             </ul>
@@ -33,7 +33,7 @@
             <h6>Estadísticas:</h6>
             <ul class="list-unstyled">
               <li *ngFor="let stat of pokemon.stats">
-               <strong>{{stat.stat.name | titlecase}}:</strong>  {{stat.base_stat}}
+              <strong>{{stat.stat.name | titlecase}}:</strong>  {{stat.base_stat}}
               </li>
             </ul>
           </div>

@@ -1,5 +1,5 @@
 export interface DragonBallZ {
-    items: Item[];
+    items?: Item[];
     meta:  Meta;
     links: Links;
 }
