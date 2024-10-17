@@ -88,17 +88,12 @@
           </div>
 
           <!-- imagen -->
-          <img
-          [src]="pokemon.data?.sprites?.versions?.['generation-v']?.['black-white']?.animated?.front_default"
-          class="card-img-top fixed-img"
-          alt="..."
-          loading="lazy"
-          (load)="imageLoaded = true"
-          >
+          <img [src]="pokemon.data?.sprites?.versions?.['generation-v']?.['black-white']?.animated?.front_default"
+            class="card-img-top fixed-img" alt="..." loading="lazy" (load)="imageLoaded = true">
           <div class="card-body fixed-body">
             <h5 class="card-title">{{pokemon.name}}</h5>
             <p class="card-text">{{pokemon.data?.base_experience}}</p>
-            <li class="btn btn-outline-primary"(click)="openModal(pokemon.data!)">Más Información</li>
+            <a [href]="pokemon.url" class="btn btn-primary">Más Información</a>
           </div>
         </div>
       </div>
@@ -112,5 +107,3 @@
     </ng-template>
   </div>
 </div>
-
-<pokemon-modal/>
