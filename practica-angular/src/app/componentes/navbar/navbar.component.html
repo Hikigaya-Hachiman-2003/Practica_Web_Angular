@@ -17,19 +17,36 @@
             <a class="nav-link" href="#" routerLink="cocteles" routerLinkActive="active">Api Cócteles</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Mi API
-            </a>
-            <ul class="dropdown-menu">
-              <!-- <li><a class="dropdown-item" href="#">Agregar</a></li> -->
-              <li><a class="dropdown-item" href="#" routerLink="miapi/list" routerLinkActive="active">Lista</a></li>
-              <!-- <li>
-                <hr class="dropdown-divider">
-              </li>
-              <li><a class="dropdown-item" href="#">Presentación</a></li> -->
-            </ul>
+            <ng-container *ngIf="user$ | async">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Mi API
+              </a>
+              <ul class="dropdown-menu">
+                <!-- <li><a class="dropdown-item" href="#">Agregar</a></li> -->
+                <li><a class="dropdown-item" href="#" routerLink="miapi/list" routerLinkActive="active">Lista</a></li>
+                <!-- <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="#">Presentación</a></li> -->
+              </ul>
+            </ng-container>
           </li>
         </ul>
+
+        <ng-container *ngIf="user$ | async as user; else showLogin">
+          <div class="d-flex align-items-center">
+            <img [src]="user.photoURL" alt="user.displayName" class="img-fluid rounded-circle" style="width: 40px; height: 40px;">
+            <span class="ms-2">{{user.displayName}}</span>
+            <button class="btn btn-outline-danger ms-2" (click)="logout()" type="button">
+              <i class="bi bi-arrow-bar-left">Logout</i>
+            </button>
+          </div>
+        </ng-container>
+
+
+        <ng-template #showLogin>
+          <button class="btn btn-outline-danger" (click)="onGoogleLogin()" type="button"><i class="bi bi-google"> Login</i></button>
+        </ng-template>
       </div>
     </div>
   </nav>
