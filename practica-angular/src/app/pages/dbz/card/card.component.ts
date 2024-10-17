@@ -1,12 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { DragonBallZ } from '../interfaces/dbz';
+import { NgFor, NgIf } from '@angular/common';
 
 @Component({
-  selector: 'app-card',
+  selector: 'dbz-card',
   standalone: true,
-  imports: [],
+  imports: [NgIf, NgFor],
   templateUrl: './card.component.html',
   styleUrl: './card.component.css'
 })
-export class CardComponent {
+export class CardComponent implements OnChanges{
 
+  @Input() public dbzcaracther : DragonBallZ | undefined
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if(changes['dbzcaracther']){
+      
+    }
+  }
 }

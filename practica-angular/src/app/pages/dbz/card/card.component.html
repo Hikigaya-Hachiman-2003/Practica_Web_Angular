@@ -1,1 +1,22 @@
-<p>card works!</p>
+<div class="row mb-3 g-3">
+    <ng-container *ngIf="dbzcaracther && dbzcaracther.items && dbzcaracther.items.length>0 else noDbzCaracther"/>
+    <div class="col-3" *ngFor="let dbzcat of dbzcaracther!.items">
+        <div class="card" id="fixed-card">
+            <img [src]="dbzcat.image" class="card-img-top" alt="..." id="fixed-img">
+            <div class="card-body" id="fixed-body">
+              <h5 class="card-title">{{dbzcat.name}}</h5>
+              <p class="card-text"><strong>Raza: </strong>{{dbzcat.race}}</p>
+              <p class="card-text"><strong>Ki: </strong>{{dbzcat.ki}}</p>
+              <p class="card-text"><strong>Ki máximo: </strong>{{dbzcat.maxKi}}</p>
+              <!-- revisar como agregar mas informacion -->
+              <a href="#" class="btn btn-primary">Más Infomación</a>
+            </div>
+          </div>
+    </div>
+    <ng-container/>
+    <ng-template #noDbzCaracther>
+        <div class="alert alert-warning" role="alert"> 
+            Personaje de Dragon Ball Z no existente
+        </div>
+    </ng-template>
+</div>
