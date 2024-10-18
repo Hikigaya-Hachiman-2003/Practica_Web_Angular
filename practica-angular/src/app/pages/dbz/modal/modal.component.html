@@ -44,14 +44,17 @@
             </div>
             <div class="modal-body">
                 <!-- Verificamos si existen transformaciones -->
-                    <li *ngFor="let transformation of dbz.transformations">
-
-                        <strong>Transformación:</strong> {{ transformation?.name }}
-                        <br />
-                        <strong>Ki:</strong> {{ transformation?.ki }}
-                        <br />
-                        <img [src]="transformation?.image" alt="Imagen de la transformación" style="width: 100px; height: 100px;">
-                    </li>
+                <ng-container *ngIf="dbz.transformations && dbz.transformations.length > 0; else noTransformations">
+                    <ul>
+                        <li *ngFor="let transformation of dbz.transformations">
+                            <strong>Transformación:</strong> {{ transformation?.name }}
+                            <br />
+                            <strong>Ki:</strong> {{ transformation?.ki }}
+                            <br />
+                            <img [src]="transformation?.image" alt="Imagen de la transformación" style="width: 100px; height: 100px;">
+                        </li>
+                    </ul>
+                </ng-container>
                 <!-- En caso de que no existan transformaciones -->
                 <ng-template #noTransformations>
                     <p>No hay transformaciones disponibles para este personaje.</p>
