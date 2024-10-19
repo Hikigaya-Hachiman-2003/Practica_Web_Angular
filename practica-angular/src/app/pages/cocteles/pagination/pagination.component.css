@@ -1,0 +1,42 @@
+/* Estilo para el contenedor de los botones de paginación */
+.pagination-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+/* Estilo para cada botón/letra de paginación */
+.pagination-buttons button {
+    background-color: transparent;
+    border: none;
+    margin: 0 5px;
+    padding: 10px;
+    font-size: 18px;
+
+    /* Cambia este color según el tema de tu página */
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+/* Estilo para la letra activa */
+.pagination-buttons button.active {
+    font-weight: bold;
+    color: #f1c40f;
+    /* Cambia este color por el que quieras resaltar la letra seleccionada */
+}
+
+/* Hover sobre las letras */
+.pagination-buttons button:hover {
+    color: #f39c12;
+    /* Color al pasar el mouse */
+}
+
+/* Asegura que los botones sean accesibles para todos los tamaños de pantalla */
+@media (max-width: 768px) {
+    .pagination-buttons button {
+        font-size: 16px;
+        padding: 8px;
+    }
+}

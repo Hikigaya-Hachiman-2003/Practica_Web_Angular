@@ -1,1 +1,18 @@
-<p>pagination works!</p>
+<!-- Pasamos los cocteles obtenidos al componente de tarjetas -->
+<div class="pagination-buttons">
+    <span *ngFor="let letter of 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')">
+        <button (click)="getDrinksByLetter(letter)" [class.active]="selectedLetter === letter">
+            {{ letter }}
+        </button>
+    </span>
+</div>
+
+<cocteles-card [coctelesTodos]="drinks"></cocteles-card>
+
+<div class="pagination-buttons">
+    <span *ngFor="let letter of 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')">
+        <button (click)="getDrinksByLetter(letter)" [class.active]="selectedLetter === letter">
+            {{ letter }}
+        </button>
+    </span>
+</div>

@@ -8,17 +8,17 @@ import { Coctel, Cocteles } from '../interfaces/cocteles';
 })
 export class CoctelesService {
 
-  private apiURLBase: string = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a'
+  private apiURLBase: string = 'https://www.thecocktaildb.com/api/json/v1/1'
 
   constructor(
     private http: HttpClient
   ) { }
 
-  getCocteles(): Observable <Cocteles> {
-    return this.http.get<Cocteles>(this.apiURLBase)
+  getCoctelesPorLetra(letra: string = 'a'): Observable <Cocteles> {
+    return this.http.get<Cocteles>(`${this.apiURLBase}/search.php?f=${letra}`)
   }
 
   getcoctel(termino: string): Observable <Coctel> {
-    return this.http.get<Coctel>(`${this.apiURLBase}/${termino}`)
+    return this.http.get<Coctel>(`${this.apiURLBase}${termino}`)
   }
 }
