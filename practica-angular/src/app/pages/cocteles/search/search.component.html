@@ -1,1 +1,21 @@
-<p>search works!</p>
+<div class="input-group mb-3">
+    <input 
+        #txtSearchCoctel
+        id="txtSearchCoctel"
+        type="text" 
+        class="form-control" 
+        placeholder="Recipient's username" 
+        aria-label="Recipient's username"
+        (keydown.enter)="buscarCoctel(txtSearchCoctel.value)"
+        aria-describedby="button-addon2"
+        
+    >
+    <button 
+        class="btn btn-outline-secondary" 
+        type="button" 
+        (click)="buscarCoctel(txtSearchCoctel.value)"
+        id="button-addon2"
+        >
+        <i class="bi bi-search"></i>
+    </button>
+</div>

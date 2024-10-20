@@ -18,7 +18,7 @@
                 <p><strong>Afiliación:</strong> {{ dbz.affiliation }}</p>
                 <p><strong>Descripción:</strong> {{ dbz.description }}</p>
 
-                <p><strong>Planeta de origen:</strong> {{ dbz.originPlanet?.image }}</p>
+                <p><strong>Planeta de origen:</strong> {{ dbz.originPlanet?.image || ''}}</p>
                 <p><strong>Nombre:</strong> {{ dbz.originPlanet?.name }}</p>
                 <p><strong>Descripción:</strong> {{ dbz.originPlanet?.description }}</p>
 

@@ -18,7 +18,7 @@ export class CoctelesService {
     return this.http.get<Cocteles>(`${this.apiURLBase}/search.php?f=${letra}`)
   }
 
-  getcoctel(termino: string): Observable <Coctel> {
-    return this.http.get<Coctel>(`${this.apiURLBase}${termino}`)
+  getCoctelPorNombre(nombre: string): Observable <Cocteles> {
+    return this.http.get<Cocteles>(`${this.apiURLBase}/search.php?s=${nombre}`)
   }
 }
