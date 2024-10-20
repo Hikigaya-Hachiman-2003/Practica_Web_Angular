@@ -17,10 +17,21 @@
                 <p><strong>Ki Maximo:</strong> {{ dbz.maxKi }}</p>
                 <p><strong>Afiliación:</strong> {{ dbz.affiliation }}</p>
                 <p><strong>Descripción:</strong> {{ dbz.description }}</p>
-
-                <p><strong>Planeta de origen:</strong> {{ dbz.originPlanet?.image || ''}}</p>
-                <p><strong>Nombre:</strong> {{ dbz.originPlanet?.name }}</p>
-                <p><strong>Descripción:</strong> {{ dbz.originPlanet?.description }}</p>
+                
+                <div class="row" id="fix-img-planet">
+                    <!-- imagen del planeta -->
+                    <p><strong>Planeta de origen:</strong></p>
+                    <img 
+                    *ngIf="dbz.originPlanet?.image" 
+                    [src]="dbz.originPlanet?.image" 
+                    alt="Imagen del planeta de origen"
+                    class="img-planet"
+                    >
+                    <p *ngIf="!dbz.originPlanet?.image">Disponible solo por búsqueda</p>
+                </div>
+                <!-- demas datos del planeta -->
+                <p><strong>Nombre:</strong> {{ dbz.originPlanet?.name || 'Disponible solo por busqueda'}}</p>
+                <p><strong>Descripción:</strong> {{ dbz.originPlanet?.description || 'Disponible solo por busqueda'}}</p>
 
             </div>
             <div class="modal-footer">

@@ -1,0 +1,13 @@
+#fix-img-planet {
+    text-align: center; /* Centra el contenido dentro del contenedor */
+    margin: 20px 0; /* Agrega margen arriba y abajo */
+}
+
+.img-planet {
+    max-width: 50%; /* Asegura que la imagen no exceda el ancho del contenedor */
+    height: auto; /* Mantiene la relación de aspecto */
+    border-radius: 4px; /* Añade esquinas redondeadas a la imagen */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave alrededor de la imagen */
+    display: flex; 
+    justify-content: center;
+}

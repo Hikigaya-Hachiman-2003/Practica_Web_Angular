@@ -13,9 +13,10 @@ export class SearchComponent {
 
   buscarCoctel(nombre: string):void{
     const termSearchCoctel = nombre.toString().trim() 
-    // if(nombre.toString().length === 0) {
-    //   return
-    // }
+      if(nombre.toString().length === 0) {
+        return
+      }
+      console.log('Searching for:', termSearchCoctel);
     this.eventSearchCoctel.emit(termSearchCoctel)
   }
 

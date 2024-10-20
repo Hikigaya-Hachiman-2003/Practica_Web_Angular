@@ -37,6 +37,7 @@ export class DbzComponent implements OnInit {
   searchDbzCaracther(termino: string): void {
     if (termino.trim().length > 0) {
       this._srvDbz.getDBZC(termino).subscribe((dbz) => {
+        console.log('Respuesta de la API:', dbz)
         const originPlanetImage = dbz.originPlanet?.image || ''; // Valor predeterminado vacío si es undefined
         const originPlanetName = dbz.originPlanet?.name || 'Desconocido'; // Valor predeterminado si es undefined
         
