@@ -1,46 +1,42 @@
-import mongoose from 'mongoose';
+import mongoose from 'mongoose'
 
-let isConected = false;
+let isConnected = false
 
-const conectarAMongoDB= async () =>{
-    if(!isConected){
-        console.log('Conectado a MongoDB'.green);
-        return;
+const conectarAMongoDB = async () => {
+    if (isConnected) {
+        console.log('Ya esta conectado a mogoDB'.green)
+        return
     }
+
     try{
-        await mongoose.connect(process.env.MONGO_URI);
-        isConected = true;
-        console.log('Conectado a MongoDB'.green);
-    } catch(error){
-        console.log('Error al conectar a MongoDB'.red);
-        
+        await mongoose.connect(process.env.MONGO_URI)
+        isConnected = true
+        console.log('Conectado a mongoDB'.green)
+    }catch(error){
+        console.log('Error al conectar a MongoDB'.red)
     }
-
 }
 
-const db = mongoose.connection;
+const db = mongoose.connection
 
 db.on('error', (error)=>{
-    isConected = false;
-    console.log('Error al conectar a MongoDB'.red);
-   
-});
+    isConnected = false
+    console.log('Error en la conexion a MongoDB'.red)
+})
 
 db.once('open', ()=>{
-    isConected = true;
-    
-});
+    isConnected = true
+})
 
 db.on('disconnected', ()=>{
-    isConected = false;
-    console.log('Desconectado de MongoDB'.yellow);
+    isConnected = false
+    console.log('Desconectado de MongoDB'.yellow)
+})
 
-});
+process.on('SIGINT', async ()=>{
+    await mongoose.connection.close()
+    console.log('Desconectado de MongoDB'.yellow)
+    process.exit(0)
+})
 
-process.on('SIGINT',async ()=>{
-    await mongoose.connection.close();
-    console.log('Desconectado de MongoDB'.yellow);
-    process.exit(0);
-});
-
-export {conectarAMongoDB, isConected};
+export {conectarAMongoDB, isConnected}

@@ -1,9 +1,8 @@
 import ejemplo from "./ejemplo.routes.js";
-import{Router} from 'express';
+import { Router } from "express";
 
+    const indexRoutes = Router()
 
-const indexRoutes = Router();
+    indexRoutes.use('/ejemplo', ejemplo)
 
-indexRoutes.use('/ejemplo', ejemplo);
-
-export default indexRoutes;
+    export default indexRoutes
