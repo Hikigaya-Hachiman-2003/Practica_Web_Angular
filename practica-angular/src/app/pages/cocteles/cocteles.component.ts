@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { CardComponent } from './card/card.component';
 import { Cocteles } from './interfaces/cocteles';
 import { CoctelesService } from './services/cocteles.service';
 import { PaginationComponent } from './pagination/pagination.component';
@@ -8,7 +7,7 @@ import { SearchComponent } from './search/search.component';
 @Component({
   selector: 'app-cocteles',
   standalone: true,
-  imports: [CardComponent, PaginationComponent, SearchComponent],
+  imports: [PaginationComponent, SearchComponent],
   templateUrl: './cocteles.component.html',
   styleUrl: './cocteles.component.css'
 })
@@ -22,22 +21,24 @@ export class CoctelesComponent implements OnInit{
   ){}
 
   ngOnInit(): void {
-    this._srvCocteles.getCoctelesPorLetra().subscribe(coctelesAll => {
-      
-      
-      this.cocteles = coctelesAll
-      // console.log(this.cocteles)
-      })
+    this.cargarCocteles();
+    }
+
+    cargarCocteles(): void {
+      this._srvCocteles.getCoctelesPorLetra().subscribe(coctelesAll => {
+        this.cocteles = coctelesAll;
+      });
     }
 
     buscarCocteles(nombre: string): void {
-      this._srvCocteles.getCoctelPorNombre(nombre).subscribe(coctelesbuscar => {
-        this.cocteles = {
-          drinks: [
-          ]
-
-        }
-      })
+      if(nombre.trim()=== ''){
+        this.cargarCocteles();
+      }else{
+        this._srvCocteles.getCoctelPorNombre(nombre).subscribe(coctelesbuscar => {
+          console.log('Resultados de la API:', coctelesbuscar );
+          this.cocteles = coctelesbuscar
+        })
+      }
     }
   }
 

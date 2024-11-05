@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Cocteles } from '../interfaces/cocteles';
 import { CardComponent } from '../card/card.component';
 import { NgFor } from '@angular/common';
@@ -13,12 +13,12 @@ import { CoctelesService } from '../services/cocteles.service';
 })
 export class PaginationComponent {
 
-  drinks: Cocteles | undefined;
+  @Input() drinks: Cocteles | undefined;
   selectedLetter: string = 'a'; // Inicialmente muestra los cocteles con la letra 'a'
 
   constructor(private coctelesService: CoctelesService) {}
 
- // Cargar los cocteles de la letra 'a' por defecto 
+ // Cargar los cocteles de la letra 'a' por defecto
   ngOnInit(): void {
     this.getDrinksByLetter(this.selectedLetter);
   }

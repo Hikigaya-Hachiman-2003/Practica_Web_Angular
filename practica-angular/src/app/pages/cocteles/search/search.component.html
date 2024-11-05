@@ -1,18 +1,18 @@
 <div class="input-group mb-3">
-    <input 
+    <input
         #txtSearchCoctel
         id="txtSearchCoctel"
-        type="text" 
-        class="form-control" 
-        placeholder="Recipient's username" 
+        type="text"
+        class="form-control"
+        placeholder="Buscar"
         aria-label="Recipient's username"
-        (keydown.enter)="buscarCoctel(txtSearchCoctel.value)"
+        (input)="buscarCoctel(txtSearchCoctel.value)"
         aria-describedby="button-addon2"
-        
+
     >
-    <button 
-        class="btn btn-outline-secondary" 
-        type="button" 
+    <button
+        class="btn btn-outline-secondary"
+        type="button"
         (click)="buscarCoctel(txtSearchCoctel.value)"
         id="button-addon2"
         >

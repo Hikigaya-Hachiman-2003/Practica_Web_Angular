@@ -8,11 +8,11 @@ import { Component, Output, EventEmitter } from '@angular/core';
   styleUrl: './search.component.css'
 })
 export class SearchComponent {
-  
+
   @Output() public eventSearchCoctel = new EventEmitter<string>()
 
   buscarCoctel(nombre: string):void{
-    const termSearchCoctel = nombre.toString().trim() 
+    const termSearchCoctel = nombre.toString().trim()
       if(nombre.toString().length === 0) {
         return
       }

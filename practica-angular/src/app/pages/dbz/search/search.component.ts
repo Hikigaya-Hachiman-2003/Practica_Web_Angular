@@ -14,6 +14,7 @@ export class SearchComponent {
   searchCaracther(termino: string | number):void{
     const termSearch = termino.toString().trim()
     if(termino.toString().length === 0){
+      this.eventSearch.emit('');
       return;
     }
     console.log('Searching for:', termSearch);
