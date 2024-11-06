@@ -1,6 +1,5 @@
 import mongoose from "mongoose";
 
-
 const ejemploSchema = new mongoose.Schema({
     nombre: {
         type: String,
