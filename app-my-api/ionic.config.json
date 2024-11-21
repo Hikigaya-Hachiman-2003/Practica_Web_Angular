@@ -1,7 +1,0 @@
-{
-  "name": "MyMobileApp",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "angular-standalone"
-}
