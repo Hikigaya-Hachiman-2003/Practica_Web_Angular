@@ -1,0 +1,32 @@
+#fixed-card {
+    width: 100%;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    /* Opcional, para un borde */
+    border-radius: 8px;
+    /* Opcional, para esquinas redondeadas */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Opcional, para un efecto de sombra */
+}
+
+#fixed-img {
+    width: auto;
+    height: 200px;
+    max-width: 80%;
+    object-fit: contain;
+}
+
+#fixed-body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    /* Espaciado interno */
+}

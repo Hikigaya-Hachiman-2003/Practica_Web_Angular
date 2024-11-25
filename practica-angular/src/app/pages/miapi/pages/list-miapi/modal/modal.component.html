@@ -1,0 +1,90 @@
+<div class="modal fade" #modalElement id="modalElement" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
+    tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
+        <div class="modal-content">
+            <!-- Header del Modal -->
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalToggleLabel">{{ gfnc.Nombre }} (ID: {{gfnc._id}})</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <!-- Cuerpo del Modal -->
+            <div class="modal-body">
+                <!-- Imagen -->
+                <div class="text-center mb-3">
+                    <img [src]="gfnc.Imagen" alt="{{ gfnc.Nombre }}" class="img-fluid"
+                        style="max-height: 300px; object-fit: contain;" />
+                </div>
+
+                <!-- Información Básica -->
+                <div class="row mb-4">
+                    <div class="col-md-6">
+                        <p><strong>Clase:</strong> {{ gfnc.Clase }}</p>
+                        <p><strong>Rareza:</strong> {{ gfnc.Rareza }}</p>
+                    </div>
+                </div>
+
+                <!-- Estadísticas -->
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5>Estadísticas Máximas</h5>
+                        <ul class="list-group">
+                            <li class="list-group-item"><strong>HP:</strong> {{ gfnc.Stats_max.HP }}</li>
+                            <li class="list-group-item"><strong>ATK:</strong> {{ gfnc.Stats_max.ATK }}</li>
+                            <li class="list-group-item"><strong>ATK Speed:</strong> {{ gfnc.Stats_max.ATK_Speed }}</li>
+                            <li class="list-group-item"><strong>Power:</strong> {{ gfnc.Stats_max.Power }}</li>
+                            <li class="list-group-item"><strong>DEF:</strong> {{ gfnc.Stats_max.DEF }}</li>
+                            <li class="list-group-item">
+                                <strong>DEF Penetration:</strong> {{ gfnc.Stats_max.DEF_Penetration }}
+                            </li>
+                            <li class="list-group-item"><strong>Crit Rate:</strong> {{ gfnc.Stats_max.Crit_Rate }}</li>
+                            <li class="list-group-item"><strong>Crit Damage:</strong> {{ gfnc.Stats_max.Crit_Damage }}
+                            </li>
+                            <li class="list-group-item">
+                                <strong>After Battle Recovery:</strong> {{ gfnc.Stats_max.After_Battle_Recovery }}
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-6">
+                        <h5>Estadísticas Mínimas</h5>
+                        <ul class="list-group">
+                            <li class="list-group-item"><strong>HP:</strong> {{ gfnc.Stats_min.HP }}</li>
+                            <li class="list-group-item"><strong>ATK:</strong> {{ gfnc.Stats_min.ATK }}</li>
+                            <li class="list-group-item"><strong>ATK Speed:</strong> {{ gfnc.Stats_min.ATK_Speed }}</li>
+                            <li class="list-group-item"><strong>Power:</strong> {{ gfnc.Stats_min.Power }}</li>
+                            <li class="list-group-item"><strong>DEF:</strong> {{ gfnc.Stats_min.DEF }}</li>
+                            <li class="list-group-item">
+                                <strong>DEF Penetration:</strong> {{ gfnc.Stats_min.DEF_Penetration }}
+                            </li>
+                            <li class="list-group-item"><strong>Crit Rate:</strong> {{ gfnc.Stats_min.Crit_Rate }}</li>
+                            <li class="list-group-item"><strong>Crit Damage:</strong> {{ gfnc.Stats_min.Crit_Damage }}
+                            </li>
+                            <li class="list-group-item">
+                                <strong>After Battle Recovery:</strong> {{ gfnc.Stats_min.After_Battle_Recovery }}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Habilidades -->
+                <div class="row mt-4">
+                    <div class="col-12">
+                        <h5>Habilidades</h5>
+                        <ul class="list-group">
+                            <li *ngFor="let skill of gfnc.Skills" class="list-group-item">
+                                <p><strong>Nombre:</strong> {{ skill.Nombre }}</p>
+                                <p><strong>Descripción:</strong> {{ skill.Descripcion }}</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer del Modal -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>

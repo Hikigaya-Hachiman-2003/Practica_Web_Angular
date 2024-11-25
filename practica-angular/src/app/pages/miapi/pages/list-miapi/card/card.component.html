@@ -1,0 +1,25 @@
+<div class="row mt-3 mb-3 g-3">
+    <ng-container *ngIf="gfnccaracther; else noGfnccaracther">
+        <div class="col-3" *ngFor="let gfnccat of gfnccaracther">
+            <div class="card" id="fixed-card">
+                <img [src]="gfnccat.Imagen" class="card-img-top" id="fixed-img" alt="{{ gfnccat.Nombre }}">
+                <div class="card-body" id="fixed-body">
+                    <h5 class="card-title">{{ gfnccat.Nombre }}</h5>
+                    <p class="card-text"><strong>Clase: </strong>{{ gfnccat.Clase }}</p>
+                    <p class="card-text"><strong>Rareza: </strong>{{ gfnccat.Rareza }}</p>
+                    <li class="btn btn-primary" (click)="openModal(gfnccat)">Más Infomación</li>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+</div>
+
+<ng-template #noGfnccaracther>
+    <div class="col-12">
+        <div class="alert alert-warning" role="alert">
+            No GFNC character found
+        </div>
+    </div>
+</ng-template>
+
+<gfnc-modal/>
