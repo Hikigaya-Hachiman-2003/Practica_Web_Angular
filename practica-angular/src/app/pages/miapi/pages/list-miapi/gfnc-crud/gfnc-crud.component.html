@@ -1,0 +1,165 @@
+<form (ngSubmit)="onSubmit()">
+    <h1 class="text-center mb-4">Crear un nuevo GFNC</h1>
+
+    <!-- Imagen -->
+    <div class="mb-3">
+        <label for="imagen" class="form-label">Imagen:</label>
+        <input id="imagen" [(ngModel)]="gfnc.ejemplo.Imagen" name="imagen" type="text" class="form-control"
+            placeholder="URL de la imagen" required />
+    </div>
+
+    <!-- Nombre -->
+    <div class="mb-3">
+        <label for="nombre" class="form-label">Nombre:</label>
+        <input id="nombre" [(ngModel)]="gfnc.ejemplo.Nombre" name="nombre" type="text" class="form-control"
+            placeholder="Nombre del personaje" required />
+    </div>
+
+    <!-- Clase -->
+    <div class="mb-3">
+        <label for="clase" class="form-label">Clase:</label>
+        <input id="clase" [(ngModel)]="gfnc.ejemplo.Clase" name="clase" type="text" class="form-control"
+            placeholder="Clase del personaje" required />
+    </div>
+
+    <!-- Rareza -->
+    <div class="mb-3">
+        <label for="rareza" class="form-label">Rareza:</label>
+        <input id="rareza" [(ngModel)]="gfnc.ejemplo.Rareza" name="rareza" type="text" class="form-control"
+            placeholder="Rareza del personaje" required />
+    </div>
+
+    <!-- Stats Max -->
+    <h3 class="mt-4 mb-3">Stats Máximos</h3>
+    <div class="row">
+        <div class="col-md-4 mb-3">
+            <label for="hpMax" class="form-label">HP:</label>
+            <input id="hpMax" [(ngModel)]="gfnc.ejemplo.Stats_max.HP" name="hpMax" type="number" class="form-control"
+                placeholder="HP máximo" />
+        </div>
+        <div class="col-md-4 mb-3">
+            <label for="atkMax" class="form-label">ATK:</label>
+            <input id="atkMax" [(ngModel)]="gfnc.ejemplo.Stats_max.ATK" name="atkMax" type="number" class="form-control"
+                placeholder="ATK máximo" />
+        </div>
+        <div class="col-md-4 mb-3">
+            <label for="atkSpeedMax" class="form-label">ATK Speed:</label>
+            <input id="atkSpeedMax" [(ngModel)]="gfnc.ejemplo.Stats_max.ATK_Speed" name="atkSpeedMax" type="number"
+                class="form-control" placeholder="Velocidad de ataque máxima" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 mb-3">
+            <label for="powerMax" class="form-label">Power:</label>
+            <input id="powerMax" [(ngModel)]="gfnc.ejemplo.Stats_max.Power" name="powerMax" type="number"
+                class="form-control" placeholder="Poder máximo" />
+        </div>
+        <div class="col-md-4 mb-3">
+            <label for="defMax" class="form-label">DEF:</label>
+            <input id="defMax" [(ngModel)]="gfnc.ejemplo.Stats_max.DEF" name="defMax" type="number" class="form-control"
+                placeholder="Defensa máxima" />
+        </div>
+        <div class="col-md-4 mb-3">
+            <label for="defMax" class="form-label">DEF Penetration:</label>
+            <input id="defMax" [(ngModel)]="gfnc.ejemplo.Stats_max.DEF_Penetration" name="defMax" type="number"
+                class="form-control" placeholder="Defensa Penetración máxima" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 mb-3">
+            <label for="critRateMax" class="form-label">Crit Rate:</label>
+            <input id="critRateMax" [(ngModel)]="gfnc.ejemplo.Stats_max.Crit_Rate" name="critRateMax" type="number"
+                class="form-control" placeholder="Tasa de crítico máxima" />
+        </div>
+        <div class="col-md-4 mb-3">
+            <label for="critDamageMax" class="form-label">Crit Damage:</label>
+            <input id="critDamageMax" [(ngModel)]="gfnc.ejemplo.Stats_max.Crit_Damage" name="critDamageMax"
+                type="number" class="form-control" placeholder="Daño crítico máximo" />
+        </div>
+        <div class="col-md-4 mb-3">
+            <label for="afterBattleRecoveryMax" class="form-label">After Battle Recovery:</label>
+            <input id="afterBattleRecoveryMax" [(ngModel)]="gfnc.ejemplo.Stats_max.After_Battle_Recovery"
+                name="afterBattleRecoveryMax" type="number" class="form-control" placeholder="Recuperación máxima" />
+        </div>
+    </div>
+
+    <!-- Stats Min -->
+    <h3 class="mt-4 mb-3">Stats Mínimos</h3>
+    <div class="row">
+        <div class="col-md-4 mb-3">
+            <label for="hpMin" class="form-label">HP:</label>
+            <input id="hpMin" [(ngModel)]="gfnc.ejemplo.Stats_min.HP" name="hpMin" type="number" class="form-control"
+                placeholder="HP mínimo" />
+        </div>
+        <div class="col-md-4 mb-3">
+            <label for="atkMin" class="form-label">ATK:</label>
+            <input id="atkMin" [(ngModel)]="gfnc.ejemplo.Stats_min.ATK" name="atkMin" type="number" class="form-control"
+                placeholder="ATK mínimo" />
+        </div>
+        <div class="col-md-4 mb-3">
+            <label for="atkSpeedMin" class="form-label">ATK Speed:</label>
+            <input id="atkSpeedMin" [(ngModel)]="gfnc.ejemplo.Stats_min.ATK_Speed" name="atkSpeedMin" type="number"
+                class="form-control" placeholder="Velocidad de ataque mínima" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 mb-3">
+            <label for="powerMin" class="form-label">Power:</label>
+            <input id="powerMin" [(ngModel)]="gfnc.ejemplo.Stats_min.Power" name="powerMin" type="number"
+                class="form-control" placeholder="Poder mínimo" />
+        </div>
+        <div class="col-md-4 mb-3">
+            <label for="defMin" class="form-label">DEF:</label>
+            <input id="defMin" [(ngModel)]="gfnc.ejemplo.Stats_min.DEF" name="defMin" type="number" class="form-control"
+                placeholder="Defensa mínima" />
+        </div>
+        <div class="col-md-4 mb-3">
+            <label for="defMin" class="form-label">DEF Penetration:</label>
+            <input id="defMin" [(ngModel)]="gfnc.ejemplo.Stats_min.DEF_Penetration" name="defMin" type="number"
+                class="form-control" placeholder="Defensa Penetración mínima" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 mb-3">
+            <label for="critRateMin" class="form-label">Crit Rate:</label>
+            <input id="critRateMin" [(ngModel)]="gfnc.ejemplo.Stats_min.Crit_Rate" name="critRateMin" type="number"
+                class="form-control" placeholder="Tasa de aciertos mínima" />
+        </div>
+        <div class="col-md-4 mb-3">
+            <label for="critDamageMin" class="form-label">Crit Damage:</label>
+            <input id="critDamageMin" [(ngModel)]="gfnc.ejemplo.Stats_min.Crit_Damage" name="critDamageMin"
+                type="number" class="form-control" placeholder="Daño crítico mínimo" />
+        </div>
+        <div class="col-md-4 mb-3">
+            <label for="afterBattleRecoveryMin" class="form-label">After Battle Recovery:</label>
+            <input id="afterBattleRecoveryMin" [(ngModel)]="gfnc.ejemplo.Stats_min.After_Battle_Recovery"
+                name="afterBattleRecoveryMin" type="number" class="form-control" placeholder="Recuperación mínima" />
+        </div>
+    </div>
+<!-- Skills -->
+<h3 class="mt-4 mb-3">Habilidades</h3>
+<div *ngFor="let skill of gfnc.ejemplo.Skills; let i = index" class="mb-3">
+  <div class="row">
+    <div class="col-md-6">
+      <label for="skillName{{i}}" class="form-label">Nombre Habilidad {{i + 1}}:</label>
+      <input id="skillName{{i}}" [(ngModel)]="skill.Nombre" name="skillName{{i}}" type="text" class="form-control"
+        placeholder="Nombre de la habilidad" required />
+    </div>
+    <div class="col-md-6">
+      <label for="skillDesc{{i}}" class="form-label">Descripción:</label>
+      <textarea id="skillDesc{{i}}" [(ngModel)]="skill.Descripcion" name="skillDesc{{i}}" class="form-control"
+        placeholder="Descripción de la habilidad" required></textarea>
+    </div>
+  </div>
+</div>
+
+<!-- Botón para agregar habilidad -->
+<div class="text-center mt-3 mb-3">
+  <button type="button" class="btn btn-secondary" (click)="addSkill()">Agregar Habilidad</button>
+</div>
+
+
+    <div class="mb-3 text-center">
+        <button type="submit" class="btn btn-primary">Guardar</button>
+    </div>
+</form>

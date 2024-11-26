@@ -4,33 +4,33 @@ export interface GfncAll {
 }
 
 export interface GfncElement {
-    _id:       string;
-    Imagen:    string;
-    Nombre:    string;
-    Clase:     string;
-    Rareza:    string;
+    _id: string;
+    Imagen: string;
+    Nombre: string;
+    Clase: string;
+    Rareza: string;
     Stats_max: StatsM;
     Stats_min: StatsM;
-    Skills:    Skill[];
+    Skills: Skill[];
 }
 
 export interface Skill {
-    Nombre:      string;
+    Nombre: string;
     Descripcion: string;
-    _id:         string;
+    _id?: string;
 }
 
 export interface StatsM {
-    HP:                    string;
-    ATK:                   string;
-    ATK_Speed:             string;
-    Power:                 string;
-    DEF:                   string;
-    DEF_Penetration:       string;
-    Crit_Rate:             string;
-    Crit_Damage:           string;
+    HP: string;
+    ATK: string;
+    ATK_Speed: string;
+    Power: string;
+    DEF: string;
+    DEF_Penetration: string;
+    Crit_Rate: string;
+    Crit_Damage: string;
     After_Battle_Recovery: string;
-    _id:                   string;
+    _id?: string;
 }
 
 // datos de manera Individual
@@ -39,32 +39,29 @@ export interface Gfnc {
 }
 
 export interface Ejemplo {
-    _id:       string;
-    Imagen:    string;
-    Nombre:    string;
-    Clase:     string;
-    Rareza:    string;
+    Imagen: string;
+    Nombre: string;
+    Clase: string;
+    Rareza: string;
     Stats_max: StatsM;
     Stats_min: StatsM;
-    Skills:    Skill[];
-    __v:       number;
-}
-
-export interface Skill {
-    Nombre:      string;
-    Descripcion: string;
-    _id:         string;
+    Skills: Skill[];
 }
 
 export interface StatsM {
-    HP:                    string;
-    ATK:                   string;
-    ATK_Speed:             string;
-    Power:                 string;
-    DEF:                   string;
-    DEF_Penetration:       string;
-    Crit_Rate:             string;
-    Crit_Damage:           string;
+    HP: string;
+    ATK: string;
+    ATK_Speed: string;
+    Power: string;
+    DEF: string;
+    DEF_Penetration: string;
+    Crit_Rate: string;
+    Crit_Damage: string;
     After_Battle_Recovery: string;
-    _id:                   string;
+}
+
+export interface Skill {
+    Nombre: string;
+    Descripcion: string;
+    _id?: string;
 }
