@@ -11,7 +11,7 @@ export class SearchComponent {
 
   @Output() public eventSearch = new EventEmitter<string>();
 
-  searchCaracther(termino: string | number):void{
+  searchCaractherGFNC(termino: string | number):void{
     const termSearch = termino.toString().trim()
     if(termino.toString().length === 0){
       this.eventSearch.emit('');

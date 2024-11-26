@@ -24,10 +24,10 @@ export class GfncService {
     return this.http.post<Gfnc>(this.apiURLBase, gfnc);
   }
 
-  // // Actualizar un registro
-  // updateGFNC(id: string, data: Gfnc): Observable<Gfnc> {
-  //   return this.http.put<Gfnc>(`${this.apiURLBase}/${id}`, data);
-  // }
+  // Actualizar un registro
+  updateGFNC(id: string, data: Gfnc): Observable<Gfnc> {
+    return this.http.put<Gfnc>(`${this.apiURLBase}/${id}`, data);
+  }
 
   //  Eliminar un registro
   deleteGFNC(id: string): Observable<any> {

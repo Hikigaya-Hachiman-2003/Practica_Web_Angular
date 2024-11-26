@@ -8,6 +8,10 @@
                     <p class="card-text"><strong>Clase: </strong>{{ gfnccat.Clase }}</p>
                     <p class="card-text"><strong>Rareza: </strong>{{ gfnccat.Rareza }}</p>
                     <li class="btn btn-primary" (click)="openModal(gfnccat)">Más Infomación</li>
+                    <!-- Botón de eliminar -->
+                    <button class="btn btn-danger mt-2" (click)="deleteGFNC(gfnccat._id)">
+                        Eliminar
+                    </button>
                 </div>
             </div>
         </div>
@@ -22,4 +26,4 @@
     </div>
 </ng-template>
 
-<gfnc-modal/>
+<gfnc-modal />

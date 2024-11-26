@@ -62,6 +62,7 @@ export class GfncCrudComponent {
   onSubmit(): void {
     // Crear un nuevo objeto limpio con la estructura correcta
     const cleanedData = {
+      
       Imagen: this.gfnc.ejemplo.Imagen,
       Nombre: this.gfnc.ejemplo.Nombre,
       Clase: this.gfnc.ejemplo.Clase,
@@ -88,7 +89,8 @@ export class GfncCrudComponent {
         Crit_Damage: this.gfnc.ejemplo.Stats_min.Crit_Damage,
         After_Battle_Recovery: this.gfnc.ejemplo.Stats_min.After_Battle_Recovery
       },
-      Skills: this.gfnc.ejemplo.Skills.map(({ _id, ...skill }) => skill) // Eliminar _id de cada habilidad
+      Skills: this.gfnc.ejemplo.Skills.map(({ _id, ...skill }) => skill), // Eliminar _id de cada habilidad
+
     };
   
     // Verifica que los datos que se enviarán son correctos

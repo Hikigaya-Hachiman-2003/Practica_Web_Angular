@@ -1,6 +1,7 @@
 // datos de manera general
 export interface GfncAll {
     gfnc: GfncElement[];
+    
 }
 
 export interface GfncElement {
@@ -21,6 +22,7 @@ export interface Skill {
 }
 
 export interface StatsM {
+
     HP: string;
     ATK: string;
     ATK_Speed: string;
@@ -39,6 +41,7 @@ export interface Gfnc {
 }
 
 export interface Ejemplo {
+
     Imagen: string;
     Nombre: string;
     Clase: string;

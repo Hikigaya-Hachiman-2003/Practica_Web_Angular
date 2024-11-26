@@ -6,14 +6,15 @@ import {
   SimpleChanges,
   ViewChild,
 } from '@angular/core';
-import { Ejemplo, GfncElement } from '../interfaces/gfnc';
+import { Ejemplo, Gfnc, GfncElement } from '../interfaces/gfnc';
 import { ModalComponent } from '../modal/modal.component';
 import { GfncService } from '../services/gfnc.service';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'gfnc-card',
   standalone: true,
-  imports: [NgIf, NgFor, ModalComponent],
+  imports: [NgIf, NgFor, ModalComponent, FormsModule],
   templateUrl: './card.component.html',
   styleUrl: './card.component.css',
 })
@@ -22,6 +23,8 @@ export class CardComponent implements OnChanges {
 
   @ViewChild(ModalComponent) public modal!: ModalComponent;
 
+
+  
   imageLoaded: boolean = false;
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -44,4 +47,25 @@ export class CardComponent implements OnChanges {
       this.modal.open(ejemplo); // Pasamos el objeto 'Ejemplo' al modal
     });
   }
+
+  // Método para eliminar un GFNC
+  deleteGFNC(id: string): void {
+    const confirmDelete = window.confirm('¿Estás seguro de que deseas eliminar este registro?');
+
+    if (confirmDelete) {
+      this.gfncService.deleteGFNC(id).subscribe(
+        () => {
+          alert('Registro eliminado con éxito.');
+          // Actualizar la lista local de cards eliminando el elemento
+          this.gfnccaracther = this.gfnccaracther!.filter((item) => item._id !== id);
+        },
+        (error) => {
+          alert('Ocurrió un error al intentar eliminar el registro.');
+          console.error(error);
+        }
+      );
+    }
+  }
+
+  
 }
